@@ -1,6 +1,6 @@
-def none2space(a):
+def none2minus(a):
     if a is None:
-        return " "
+        return "-"
     else:
         return a
 
@@ -23,7 +23,7 @@ def showf():  # Show game field
     print("    | 0 | 1 | 2 | ")
     print("  --------------- ")
     for i, row in enumerate(field):
-        row_str = f"  {i} | {' | '.join(map(none2space, row))} | "
+        row_str = f"  {i} | {' | '.join(map(none2minus, row))} | "
         print(row_str)
         print("  --------------- ")
     print()
