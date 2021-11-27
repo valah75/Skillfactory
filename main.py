@@ -1,3 +1,5 @@
+import random
+
 def none2minus(a):
     if a is None:
         return "-"
@@ -82,10 +84,20 @@ def check_win():
             return True
     return False
 
+def turn(): # Turn of computer
+    turns = [ (0,0), (0, 1), (0, 2), (1,0), (1, 1), (1, 2), (2,0), (2, 1), (2, 2) ]
+    while True:
+        c = random.choice(turns)
+        if field[c[0]][c[1]] is None:
+            return c[0], c[1]
+
+
 
 welcome()
 
+
 field = [[None] * 3 for i in range(3)]
+
 
 count = 0
 
@@ -97,10 +109,12 @@ while True:
     showf()
     if count % 2 == 1:
         print(" Turn of X!")
+        x, y = ask()
     else:
         print(" Turn of 0!")
+        x, y = turn()
 
-    x, y = ask()
+
 
     # Filling the field cell
 
@@ -117,3 +131,4 @@ while True:
     if count == 9:
         print(" Dead heat!")
         break
+
