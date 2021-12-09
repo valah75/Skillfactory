@@ -161,7 +161,7 @@ class Board:
                     print("The ship is damaged!")
                     return True
 
-        self.field[d.x][d.y] = "."
+        self.field[d.x][d.y] = "T"
         print("Missed!")
         return False
 
