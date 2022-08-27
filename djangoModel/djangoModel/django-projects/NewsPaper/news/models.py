@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-
+from
 
 news = 'NE'
 article = 'AR'
@@ -11,13 +11,15 @@ TYPES = [
     ]
 # Create your models here.
 class Author(models.Model):
+    user = models.OneToOneField(User, default=0, on_delete=models.CASCADE)
     rating = models.IntegerField(default = 0)
-    user = models.OneToOneField(User, default=0, on_delete = models.CASCADE)
+
 
     def update_rating(userid):
     #    Author.objects.filter(id=userid, Post.kind="")
     #    Author.objects.filter(age__lt=25)
-        pass
+    a = Author()
+    pass
 
 
 class Category(models.Model):  # наследуемся от класса Model
